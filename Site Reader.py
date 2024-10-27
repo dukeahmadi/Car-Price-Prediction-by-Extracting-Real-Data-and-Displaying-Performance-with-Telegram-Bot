@@ -8,8 +8,8 @@ import pandas as pd
 # Input URL and paths
 url = input('Please give me the URL: ')
 car_name = input('Please enter your car\'s name: ')
-csv_path = 'C:/Users/Alireza/Desktop/Car Price Prediction/DB/%s.csv' %car_name
-driver_path = 'C:/Users/Alireza/Desktop/Car Price Prediction/chromedriver/chromedriver.exe'
+csv_path = 'C:/Users/Amir/Desktop/Car Price Prediction/DB/%s.csv' %car_name
+driver_path = 'C:/Users/Amir/Desktop/Car Price Prediction/chromedriver/chromedriver.exe'
 
 # Reading data from the site
 service = Service(driver_path)
