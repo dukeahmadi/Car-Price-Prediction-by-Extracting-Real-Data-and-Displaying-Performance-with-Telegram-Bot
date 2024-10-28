@@ -8,8 +8,8 @@ import pandas as pd
 # Input URL and paths
 url = input('Please give me the URL: ')
 car_name = input('Please enter your car\'s name: ')
-csv_path = 'C:/Users/Amir/Desktop/Car Price Prediction/DB/%s.csv' %car_name
-driver_path = 'C:/Users/Amir/Desktop/Car Price Prediction/chromedriver/chromedriver.exe'
+csv_path = 'C:/Users/Amir/Desktop/Car Price Prediction/DB/%s.csv' %car_name # save csv in this folder 
+driver_path = 'C:/Users/Amir/Desktop/Car Price Prediction/chromedriver/chromedriver.exe' # path of ChromeDriver
 
 # Reading data from the site
 service = Service(driver_path)
@@ -43,6 +43,7 @@ for detail in details:
         year = lines[0]
         km = lines[1]
         
+        # Guys, "صفر کیلومتر" means zero kilometers
         # Replace "صفر کیلومتر" with 0 and clean km
         if "صفر کیلومتر" in km:
             km = "0"
@@ -68,6 +69,7 @@ details_df['Name'] = names_data
 # Adding the 'price' column
 details_df['Price'] = prices_data
 
+#Guys, "کارکرده" means how many kilometers it has worked
 # Removing rows where 'Kilometers' is "کارکرده"
 details_df = details_df[details_df['Kilometers'] != 'کارکرده']
 
